@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Ürün Detayı</title>
+    <style>
+        body {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        .container {
+            margin-top: 100px;
+            border-radius: 10px;
+            padding: 40px;
+            background-color: #495057;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            max-width: 1400px; /* Maksimum genişlik */
+            margin-left: auto; /* Ortalamak için */
+            margin-right: auto; /* Ortalamak için */
+        }
+        .product-image {
+            max-width: 600px; /* Resim genişliği */
+            border-radius: 10px; /* Yuvarlatılmış köşeler */
+            margin-bottom: 20px; /* Alt boşluk */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px; /* Yuvarlatılmış köşeler */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .text-fade {
+            color: #d1d3d5; /* Rengi açıldı */
+        }
+        .d-flex {
+            align-items: center;
+        }
+        .product-info {
+            margin-left: 20px; /* Resim ile bilgiler arasında boşluk */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex">
+            <img th:src="@{${product.image_path}}" alt="Ürün Resmi" class="product-image">
+            <div class="product-info">
+                <h2 th:text="${product.name}">Ürün Adı</h2>
+                <h5>Fiyat: <span class="text-success" th:text="'₺' + ${product.price}">₺199.99</span></h5>
+                <h5>Stok Durumu: <span class="text-warning" th:text="${product.stock > 0 ? 'Stokta Var' : 'Stokta Yok'}">Stokta Var</span></h5>
+                <button class="btn btn-primary btn-block">Sepete Ekle</button>
+                <button class="btn btn-primary btn-block">İstek Listesine Ekle</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
