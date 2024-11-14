@@ -1,0 +1,23 @@
+/* src/main/resources/static/css/navbar.css */
+.navbar .icon {
+    position: relative;
+    top: 3px;
+    transition: color 0.5s ease-in-out;
+    animation: rainbow 2s infinite;
+}
+
+.navbar .icon:hover {
+    animation: none;
+    color: darkblue;
+}
+
+@keyframes rainbow {
+    0% { color: #ff6666; }   /* Light Red */
+    14% { color: #ff9966; }  /* Light Orange */
+    28% { color: #ffcc66; }  /* Light Yellow */
+    42% { color: #99ff66; }  /* Light Green */
+    57% { color: #66ffcc; }  /* Light Cyan */
+    71% { color: #6699ff; }  /* Light Blue */
+    85% { color: #cc66ff; }  /* Light Purple */
+    100% { color: #ff6666; } /* Light Red */
+}

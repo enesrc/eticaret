@@ -6,42 +6,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Kayıt</title>
     <style>
-        body {
-            background-color: #343a40;
-            color: #ffffff;
-        }
         .container {
             margin-top: 100px;
             border-radius: 10px;
             padding: 40px;
-            background-color: #495057;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            max-width: 400px; /* Maksimum genişlik eklendi */
+            max-width: 400px;
             margin-left: auto; /* Ortalamak için */
             margin-right: auto; /* Ortalamak için */
         }
         .form-control {
-            background-color: #6c757d; /* Arka plan rengi */
-            color:#d1d3d5;
-            border: none; /* Kenarlık yok */
-            border-radius: 5px; /* Yuvarlatılmış köşeler */
+            color:#ffffff;
+            border-radius: 5px;
         }
         .form-control:focus {
-            background-color: #87929d; /* Odaklanıldığında arka plan rengi */
-            color: #ffffff; /* Metin rengi */
-            box-shadow: none; /* Gölge yok */
-            border-color: #007bff; /* Kenar rengi */
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px; /* Yuvarlatılmış köşeler */
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .text-fade {
-            color: #d1d3d5; /* Rengi açıldı */
+            box-shadow:none;
         }
     </style>
 </head>
@@ -58,20 +37,23 @@
             
             <div class="form-group">
                 <label for="name">Ad</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control bg-secondary text-white" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">E-posta</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control bg-secondary text-white" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Şifre</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control bg-secondary text-white" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Kayıt Ol</button>
+            </div>
         </form>
         <div class="text-center mt-3">
-            <p class="text-fade">Zaten bir hesabınız var mı? <a href="/signin" class="text-white">Giriş Yap</a></p>
+            <p class="text-secondary">Zaten bir hesabınız var mı? <a href="/signin" class="text-dark">Giriş Yap</a></p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

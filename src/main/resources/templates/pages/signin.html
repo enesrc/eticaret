@@ -6,17 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Giriş</title>
     <style>
-        body {
-            background-color: #343a40;
-            color: #ffffff;
-        }
         .container {
             margin-top: 100px;
             border-radius: 10px;
             padding: 40px;
-            background-color: #495057;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            max-width: 400px; /* Maksimum genişlik */
+            max-width: 400px;
             margin-left: auto; /* Ortalamak için */
             margin-right: auto; /* Ortalamak için */
         }
@@ -31,17 +26,6 @@
             color: #ffffff; /* Metin rengi */
             box-shadow: none; /* Gölge yok */
             border-color: #007bff; /* Kenar rengi */
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px; /* Yuvarlatılmış köşeler */
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .text-fade {
-            color: #d1d3d5; /* Rengi açıldı */
         }
     </style>
 </head>
@@ -69,10 +53,12 @@
                 <label for="password">Şifre</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Giriş Yap</button>
+            </div>
         </form>
         <div class="text-center mt-3">
-            <p class="text-fade">Henüz bir hesabınız yok mu? <a href="/signup" class="text-white">Kayıt Ol</a></p>
+            <p class="text-secondary">Henüz bir hesabınız yok mu? <a href="/signup" class="text-dark">Kayıt Ol</a></p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

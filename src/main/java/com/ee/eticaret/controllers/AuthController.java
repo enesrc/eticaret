@@ -19,7 +19,7 @@ public class AuthController {
     @GetMapping("/signup")
     public String showSignUpForm(Model model) {
         model.addAttribute("user", new User());
-        return "signup";
+        return "pages/signup";
     }
 
     @PostMapping("/signup")
@@ -38,7 +38,7 @@ public class AuthController {
     @GetMapping("/signin")
     public String showSignInForm(Model model) {
         model.addAttribute("user", new User());
-        return "signin";
+        return "pages/signin";
     }
 
     @PostMapping("/signin")

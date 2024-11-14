@@ -10,8 +10,8 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Product {
-
+public class Category {
+    
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
@@ -19,16 +19,4 @@ public class Product {
   @NotNull
   @Column(nullable = false)
   private String name;
-
-  @NotNull
-  @Column(nullable = false)
-  private String price;
-
-  @NotNull
-  @Column(nullable = false)
-  private Integer stock;
-
-  @Column
-  private String image_path;
-
 }

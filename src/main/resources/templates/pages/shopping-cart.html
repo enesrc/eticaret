@@ -1,0 +1,29 @@
+<!-- src/main/resources/templates/pages/shopping-cart.html -->
+<div th:fragment="shopping-cart">
+    <div class="container-lg">
+        <div class="d-flex flex-column align-items-center border py-2">
+            <p style="font-size: x-large;">Sepetiniz..</p>
+
+            <div class="container">
+                <div class="row" th:each="product : ${products}">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img th:src="@{${product.image_path}}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${product.name}">Product Name</h5>
+                                <p class="card-text" th:text="${product.price}">Product Price</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Kaldır</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-warning" th:href="@{/products}">Alışverişi Tamamla</a>
+        </div>
+    </div>
+</div>
