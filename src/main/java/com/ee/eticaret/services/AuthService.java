@@ -13,7 +13,7 @@ public class AuthService {
     private UserRepository userRepository;
 
     public boolean signup(User user) {
-        if (userRepository.existsByEmail(user.getEmail())) {
+        if (userRepository.existsByEmail(user.getEmail()) || userRepository.existsByUsername(user.getUsername())) {
             return false;
         } else {
             userRepository.save(user);

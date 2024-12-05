@@ -23,6 +23,10 @@ public class User {
 
   @NotNull
   @Column(unique = true, nullable = false)
+  private String username;
+
+  @NotNull
+  @Column(unique = true, nullable = false)
   private String email;
 
   @NotNull

@@ -35,6 +35,12 @@
             background-color: #e9f4ff;
             border-color: #007bff;
         }
+
+        .alert.override-padding  {
+            padding-left: 10px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
     </style>
 </head>
 
@@ -42,13 +48,13 @@
     <div class="card container_">
         <h2 class="text-center">bitpazari.com</h2>
         <h3 class="text-center">Giriş</h3>
-        <div th:if="${loginError}" class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+        <div th:if="${loginError}" class="alert alert-danger override-padding alert-dismissible fade show mt-3" role="alert">
             Geçersiz e-posta veya şifre.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div th:if="${signupSuccess}" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        <div th:if="${signupSuccess}" class="alert alert-success override-padding alert-dismissible fade show mt-3" role="alert">
             Kayıt başarılı. Giriş yapabilirsiniz.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
