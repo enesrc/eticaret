@@ -4,28 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Fa icon -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Fa icon -->
     <script src="https://kit.fontawesome.com/24e6ff7d6f.js" crossorigin="anonymous"></script> <!-- Fa icon -->
     <link rel="stylesheet" th:href="@{/css/product-card.css}">
     <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <title th:text="${title}">Ekmekcibasi.com</title>
 
     <style>
+        body {
+            background-color: rgb(254, 219, 225);
+
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
         .sidebar {
             width: 200px;
             padding: 15px;
         }
+
         .gap {
             gap: 5px;
-        } 
-        .page-content{
+        }
+
+        .page-content {
             padding: 10px;
         }
+
         .indented-paragraph {
-            text-indent: 2em; /* Paragraf başı girintisi */
+            text-indent: 2em;
+            /* Paragraf başı girintisi */
         }
-        .fs-6{
+
+        .fs-6 {
             font-size: small;
         }
     </style>
@@ -36,7 +59,7 @@
 
     <div class='page-content'>
         <div th:replace="('pages/' + ${page}) :: (${page})"></div> <!-- Dinamik olarak fragment dahil ediliyor -->
-    </div>  
+    </div>
 
     <div th:replace="fragments/footer :: footer"></div>
 

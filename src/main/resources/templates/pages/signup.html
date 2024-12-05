@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <title>Kayıt</title>
     <style>
-        .container {
+        body {
+            background-color: rgb(254, 219, 225);
+
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .container_ {
             margin-top: 100px;
-            border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
-            margin-left: auto; /* Ortalamak için */
-            margin-right: auto; /* Ortalamak için */
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .form-control {
-            color:#ffffff;
-            border-radius: 5px;
-        }
+
         .form-control:focus {
-            box-shadow:none;
+            background-color: #e9f4ff;
+            border-color: #007bff;
         }
+
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h2 class="text-center">Kayıt</h2>
+    <div class="card container_">
+        <h2 class="text-center">bitpazari.com</h2>
+        <h3 class="text-center">Kayıt</h3>
         <form th:action="@{/signup}" method="post">
             <div th:if="${loginError}" class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                 Eposta geçersiz ya da zaten kullanımda.
@@ -34,22 +50,22 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            
+
             <div class="form-group">
                 <label for="name">Ad</label>
-                <input type="text" class="form-control bg-secondary text-white" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">E-posta</label>
-                <input type="email" class="form-control bg-secondary text-white" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Şifre</label>
-                <input type="password" class="form-control bg-secondary text-white" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-warning">Kayıt Ol</button>
+                <button type="submit" class="btn btn-success">Kayıt Ol</button>
             </div>
         </form>
         <div class="text-center mt-3">
@@ -60,4 +76,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
