@@ -6,6 +6,7 @@ import com.ee.eticaret.services.ProductService;
 import com.ee.eticaret.services.CategoryService;
 import com.ee.eticaret.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +15,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
 public class ProductController {
+    
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
 
     @Autowired
     private ProductService productService;
@@ -79,16 +83,20 @@ public class ProductController {
     }
 
     @PostMapping("/add-to-cart")
-    public String addToCart(@RequestBody Product product, Model model) {
-        cartService.addProduct(product);
+    public String addToCart(@RequestParam Integer productId, Model model) {
+        Optional<Product> productOpt = productService.getAProduct(productId);
+        if (productOpt.isPresent()) {
+            Product product = productOpt.get();
+            cartService.addProduct(product);
+            product.setStock(product.getStock() - 1);
+            productService.saveProduct(product);
 
-        List<Product> products = productService.getAllProducts();
-        List<Category> categories = categoryService.getAllCategories();
-        model.addAttribute("categories", categories);
-        model.addAttribute("products", products);
-        model.addAttribute("page", "products-list");
-        model.addAttribute("title", "Ürünleri Keşfet");
-        return "index";
+            // WebSocket mesajı gönder
+            messagingTemplate.convertAndSend("/topic/stockUpdate", product);
+
+            return "redirect:/cart";
+        } else {
+            return "errors/product-not-found"; // daha yapılmadı.
+        }
     }
-    
 }
