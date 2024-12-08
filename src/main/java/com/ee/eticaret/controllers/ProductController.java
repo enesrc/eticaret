@@ -62,7 +62,7 @@ public class ProductController {
             model.addAttribute("page", "shopping-cart");
         }
 
-        model.addAttribute("title", "EkmekciBasi Sepetiniz");
+        model.addAttribute("title", "birpazari.com - Sepet");
         return "index";
     }
 
