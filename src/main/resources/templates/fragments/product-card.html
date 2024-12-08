@@ -8,8 +8,8 @@
             <p class="card-text" th:text="${product.price} + '₺'">0.00₺</p>
             <p class="card-text product-stock" th:text="'Son ' + ${product.stock} + ' adet'">Stock</p>
             <div class="mt-2 d-flex justify-content-between">
-                <a href="#" class="btn btn-primary btn-sm">İncele</a>
-                
+                <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-primary btn-sm">İncele</a>
+
                 <form th:action="@{/add-to-cart}" method="post">
                     <input type="hidden" name="productId" th:value="${product.id}" />
                     <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-shopping-cart"></i></button>
